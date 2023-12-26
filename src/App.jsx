@@ -30,7 +30,9 @@ function App() {
       //Considera o caso do usuário digitar algo na última posição.
       if(numberToConverter === "" && numberToConverter.length === 0){
 
+        setResult(0);
         setTextValue(numberToConverter);
+        
       }else{
 
         alert("Números binários só podem ser formados por 0 ou 1.");
@@ -41,36 +43,17 @@ function App() {
       setTextValue(numberToConverter);
 
       let numberConverted = 0;
+
+      const numberReverted = numberToConverter.split("").reverse().join("");
+
+      for(let i = 0; i < numberReverted.length; i++){
+
+        if(numberReverted[i] === "1") numberConverted += Math.pow(2, i);
+      }
+
+      setResult(numberConverted);
     }
-    
-    
-
-    /*for(let i = 0; i < numberToConverter.length; i++){
-
-      const digit = numberToConverter[i];
-
-      if(digit === "0" || digit === "1"){
-
-
-      }
-
-      console.log(numberToConverter[i])
-    }*/
-
-    /*numberToConverter.forEach((index, digit) => {
-
-      if(digit === "0" || digit === "1"){
-
-        setTextValue(numberToConverter);
-
-      }else{
-
-        alert("Números binários só podem ser formados por 0 ou 1.");
-      }
-    })*/
-
-    
-  } 
+  }
 
   return (
     <div className='conatiner'>
