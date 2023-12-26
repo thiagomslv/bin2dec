@@ -1,0 +1,53 @@
+.conatiner{
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.binary-text{
+
+  width: 190px;
+  height: 30px;
+
+  font-size: 20px;
+  border: solid 1px white;
+}
+
+.binary-text:focus{
+
+  outline: none;
+  border: solid 1px white;
+}
+
+.display{
+
+  width: 120px;
+  height: 80px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  border: solid 1px #f1f1f1;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.result{
+
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  font-size: 3em;
+}
+
+h1{
+
+  margin: 0;
+}
