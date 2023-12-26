@@ -6,24 +6,69 @@ function App() {
   const [result, setResult] = useState(0);
   const [textValue, setTextValue] = useState("");
 
+  //Bit mais significativo.
+  
   const handleText = (e) => {
 
-    const text = e.target.value;
+    const textDigitedByUser = e.target.value;
     //Verifica se a string é maior que 8.
-    if(text.length > 8){
+    if(textDigitedByUser.length > 8){
 
       alert("Comprimento do número a ser convertido não pode ser superior a 8.");
-    }else{
 
-      setTextValue(text);
-      converter();
+    }else{
+      
+      converter(textDigitedByUser);
     }
   }
  
-  const converter = (e) => {
+  const converter = ( numberToConverter ) => {
 
-    const numberToConverter = textValue;
+    //Verifica se a string digitada está no formato esperado. ^[0-1]+$
+    if(numberToConverter.match(/^[0-1]+$/g) === null){
+
+      //Considera o caso do usuário digitar algo na última posição.
+      if(numberToConverter === "" && numberToConverter.length === 0){
+
+        setTextValue(numberToConverter);
+      }else{
+
+        alert("Números binários só podem ser formados por 0 ou 1.");
+      }
+      
+    }else{
+
+      setTextValue(numberToConverter);
+
+      let numberConverted = 0;
+    }
     
+    
+
+    /*for(let i = 0; i < numberToConverter.length; i++){
+
+      const digit = numberToConverter[i];
+
+      if(digit === "0" || digit === "1"){
+
+
+      }
+
+      console.log(numberToConverter[i])
+    }*/
+
+    /*numberToConverter.forEach((index, digit) => {
+
+      if(digit === "0" || digit === "1"){
+
+        setTextValue(numberToConverter);
+
+      }else{
+
+        alert("Números binários só podem ser formados por 0 ou 1.");
+      }
+    })*/
+
     
   } 
 
